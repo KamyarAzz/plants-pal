@@ -7,7 +7,7 @@ export const requireAuth = (req, res, next) => {
 
   // Check if the header exists and starts with "Bearer "
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({message: "Unauthorized: No token provided"});
+    return res.status(401).json({ message: "Unauthorized: No token provided" });
   }
 
   // Extract the token
@@ -18,7 +18,7 @@ export const requireAuth = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     // Attach the decoded user ID to the request object
-    req.user = {id: decoded.userId};
+    req.user = { id: decoded.userId };
 
     // Move on to the actual controller function
     next();

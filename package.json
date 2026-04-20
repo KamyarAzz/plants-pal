@@ -1,0 +1,15 @@
+{
+  "name": "plants-pal-backend",
+  "version": "1.0.0",
+  "description": "Plants Pal Backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kamyar Azizi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

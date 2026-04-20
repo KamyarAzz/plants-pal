@@ -1,4 +1,4 @@
-import { Router } from "express";
+import {Router} from "express";
 import {
   deleteUser,
   getUser,
@@ -6,14 +6,14 @@ import {
   registerUser,
   updateUser,
 } from "../controllers/user.controller.js";
-import { requireAuth } from "../middleware/auth.middleware.js";
+import {requireAuth} from "../middleware/auth.middleware.js";
 
 const router = Router();
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/user/:id", requireAuth, getUser);
-router.put("/user/:id", requireAuth, updateUser);
-router.delete("/user/:id", requireAuth, deleteUser);
+router.get("/:id", requireAuth, getUser);
+router.put("/:id", requireAuth, updateUser);
+router.delete("/:id", requireAuth, deleteUser);
 
 export default router;

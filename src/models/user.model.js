@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, {Schema} from "mongoose";
 import bcrypt from "bcryptjs";
 
 const userSchema = new Schema(
@@ -31,9 +31,9 @@ const userSchema = new Schema(
 );
 
 // Mongoose Middleware: Hash the password BEFORE saving to the database
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {
   // If the password hasn't been modified (e.g., updating user email), skip hashing
-  if (!this.isModified("password")) return next();
+  if (!this.isModified("password")) return;
 
   try {
     const salt = await bcrypt.genSalt(10);

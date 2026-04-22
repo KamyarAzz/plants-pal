@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 const plantSchema = new Schema(
   {
@@ -47,32 +47,23 @@ const plantSchema = new Schema(
   },
 );
 
-plantSchema.pre("save", async function (next) {
+plantSchema.pre("save", async function () {
   // 'this' refers to the current plant document about to be saved
 
   // 1. Check if the name is missing or just empty spaces
   if (!this.name || this.name.trim() === "") {
-    try {
-      // 2. Access the model using this.constructor to query the database
-      // We count how many plants belong to this specific ownerId
-      const PlantModel = this.constructor;
-      const existingPlantCount = await PlantModel.countDocuments({
-        ownerId: this.ownerId,
-      });
+    // 2. Access the model using this.constructor to query the database
+    // We count how many plants belong to this specific ownerId
+    const PlantModel = this.constructor;
+    const existingPlantCount = await PlantModel.countDocuments({
+      ownerId: this.ownerId,
+    });
 
-      // 3. Set the default name based on the count
-      this.name = `Plant ${existingPlantCount + 1}`;
-
-      next(); // Proceed with saving
-    } catch (error) {
-      next(error); // Pass any database errors to Express
-    }
-  } else {
-    // If the user provided a name, just move on
-    next();
+    // 3. Set the default name based on the count
+    this.name = `Plant ${existingPlantCount + 1}`;
   }
 });
 
-plantSchema.index({ ownerId: 1 });
+plantSchema.index({ownerId: 1});
 
 export const Plant = mongoose.model("Plant", plantSchema);

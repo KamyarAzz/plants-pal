@@ -9,6 +9,6 @@ import userRouter from "./routes/user.route.js";
 import plantRouter from "./routes/plant.route.js";
 
 app.use(`${path}/user`, userRouter);
-app.use(`${path}/plant`, plantRouter);
+app.use(`${path}/plants`, plantRouter);
 
 export default app;

@@ -1,18 +1,19 @@
-import { Router } from "express";
+import {Router} from "express";
 import {
   createPlant,
   deletePlant,
-  getAllPlant,
+  getAllPlants,
   getPlant,
   updatePlant,
 } from "../controllers/plant.controller.js";
+import {requireAuth} from "../middleware/auth.middleware.js";
 
 const router = Router();
 
-router.get("/plant/:id", getPlant);
-router.get("/plant", getAllPlant);
-router.post("/plant", createPlant);
-router.put("/plant/:id", updatePlant);
-router.delete("/plant/:id", deletePlant);
+router.get("/:id", requireAuth, getPlant);
+router.get("", requireAuth, getAllPlants);
+router.post("", requireAuth, createPlant);
+router.put("/:id", requireAuth, updatePlant);
+router.delete("/:id", requireAuth, deletePlant);
 
 export default router;

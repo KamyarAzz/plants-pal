@@ -1,4 +1,4 @@
-import {Router} from "express";
+import { Router } from "express";
 import {
   createPlant,
   deletePlant,
@@ -6,7 +6,7 @@ import {
   getPlant,
   updatePlant,
 } from "../controllers/plant.controller.js";
-import {requireAuth} from "../middleware/auth.middleware.js";
+import { requireAuth } from "../middleware/auth.middleware.js";
 
 const router = Router();
 

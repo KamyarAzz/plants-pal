@@ -1,8 +1,8 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 const plantSchema = new Schema(
   {
-    ownerId: {
+    userId: {
       type: Schema.Types.ObjectId,
       reqiured: true,
       ref: "User",
@@ -64,6 +64,6 @@ plantSchema.pre("save", async function () {
   }
 });
 
-plantSchema.index({ ownerId: 1 });
+plantSchema.index({ownerId: 1});
 
 export const Plant = mongoose.model("Plant", plantSchema);

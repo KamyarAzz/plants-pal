@@ -2,8 +2,11 @@ import express from "express";
 import process from "process";
 import userRouter from "./routes/user.route.js";
 import plantRouter from "./routes/plant.route.js";
-import {requestLogger} from "./middleware/logger.middleware.js";
-import {errorHandler, notFoundHandler} from "./middleware/error.middleware.js";
+import { requestLogger } from "./middleware/logger.middleware.js";
+import {
+  errorHandler,
+  notFoundHandler,
+} from "./middleware/error.middleware.js";
 
 const app = express();
 const path = process.env.API_BASE_PATH || "/api/v1";

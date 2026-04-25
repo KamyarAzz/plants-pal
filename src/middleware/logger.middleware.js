@@ -1,4 +1,4 @@
-import {info} from "../utils/logger.js";
+import { info } from "../utils/logger.js";
 
 const sanitizeBody = (body) => {
   if (!body || typeof body !== "object") return body;

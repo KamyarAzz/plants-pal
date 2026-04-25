@@ -1,10 +1,10 @@
 import ApiError from "../utils/apiError.js";
-import {User} from "../models/user.model.js";
+import { User } from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 import process from "process";
 
 const generateJWT = (id) => {
-  return jwt.sign({id}, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "7d",
   });
 };
@@ -18,13 +18,13 @@ const loginValidation = (email, password) => {
 };
 
 const registerUser = async (req, res) => {
-  const {username, email, password} = req.body;
+  const { username, email, password } = req.body;
 
   if (!registrationValidation(username, email, password)) {
     throw new ApiError(400, "Invalid registration data");
   }
 
-  const userExists = await User.findOne({email: email.toLowerCase()});
+  const userExists = await User.findOne({ email: email.toLowerCase() });
   if (userExists) {
     throw new ApiError(400, "User already exists");
   }
@@ -47,12 +47,12 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  const {email, password} = req.body;
+  const { email, password } = req.body;
   if (!loginValidation(email, password)) {
     throw new ApiError(400, "Invalid login data");
   }
 
-  const user = await User.findOne({email: email.toLowerCase()});
+  const user = await User.findOne({ email: email.toLowerCase() });
   if (!user) throw new ApiError(401, "User not found");
 
   const passwordsMatch = await user.matchPassword(password);
@@ -73,7 +73,7 @@ const getUser = async (req, res) => {
   const userId = req.user.id;
   const user = await User.findById(userId);
   if (!user) throw new ApiError(404, "User not found");
-  return res.status(200).json({message: "User found", user});
+  return res.status(200).json({ message: "User found", user });
 };
 
 const updateUser = async (req, res) => {
@@ -89,7 +89,7 @@ const updateUser = async (req, res) => {
 
   return res
     .status(200)
-    .json({message: "User updated successfully", user: updatedUser});
+    .json({ message: "User updated successfully", user: updatedUser });
 };
 
 const deleteUser = async (req, res) => {
@@ -100,7 +100,7 @@ const deleteUser = async (req, res) => {
     throw new ApiError(404, "User not found");
   }
 
-  return res.status(200).json({message: "User deleted successfully"});
+  return res.status(200).json({ message: "User deleted successfully" });
 };
 
-export {registerUser, loginUser, updateUser, deleteUser, getUser};
+export { registerUser, loginUser, updateUser, deleteUser, getUser };

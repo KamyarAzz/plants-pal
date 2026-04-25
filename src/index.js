@@ -17,7 +17,7 @@ process.on("uncaughtException", (error) => {
 });
 
 process.on("unhandledRejection", (reason) => {
-  logger.error("Unhandled promise rejection", {reason});
+  logger.error("Unhandled promise rejection", { reason });
   process.exit(1);
 });
 

@@ -1,5 +1,5 @@
 import process from "process";
-import {error as logError} from "../utils/logger.js";
+import { error as logError } from "../utils/logger.js";
 import ApiError from "../utils/apiError.js";
 
 const getMongoErrorDetails = (err) => {

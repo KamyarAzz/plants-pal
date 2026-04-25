@@ -5,7 +5,7 @@ const formatMeta = (meta) => {
   try {
     return JSON.parse(JSON.stringify(meta));
   } catch {
-    return {meta: String(meta)};
+    return { meta: String(meta) };
   }
 };
 
@@ -39,4 +39,4 @@ export const debug = (message, meta) => {
   }
 };
 
-export default {info, warn, error, debug};
+export default { info, warn, error, debug };

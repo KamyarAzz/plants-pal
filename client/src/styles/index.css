@@ -16,10 +16,6 @@
   --color-neutral-500: #78716c; 
   --color-neutral-700: #44403c;
   --color-neutral-900: #1c1917; 
-  
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-transparent: transparent;
 
   --bg-main: var(--color-neutral-50);
   --bg-card: var(--color-white);

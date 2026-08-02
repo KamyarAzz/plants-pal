@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 
-import { router } from '../components/features/auth/Router';
+import { router } from './appRouter.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

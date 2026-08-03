@@ -13,7 +13,7 @@ export default function ShowButton({ onClick, className }: Props) {
   return (
     <div
       onClick={clickHandler}
-      className={`w-8 h-8 p-1 rounded-full hover:bg-green-50 cursor-pointer ${className || ''}`}
+      className={`w-8 h-8 p-1 rounded-full hover:bg-green-100 cursor-pointer ${className || ''}`}
     >
       {isHidden ? (
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">

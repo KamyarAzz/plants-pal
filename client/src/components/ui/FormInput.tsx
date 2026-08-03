@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import type { InputType } from '@/types';
 
 import ShowButton from './ShowButton';
@@ -21,8 +23,9 @@ export default function FormInput({
   imgAlt,
   disabled,
 }: Props) {
+  const [typeState, setTypeState] = useState(type);
   const hidePassword = (isHidden: boolean) => {
-    console.log(isHidden);
+    setTypeState(isHidden ? 'password' : 'text');
   };
 
   return (
@@ -36,7 +39,7 @@ export default function FormInput({
         {imgSrc && <img src={imgSrc} alt={imgAlt} className="mr-3 h-5 w-5 shrink-0" />}
         <input
           id={name}
-          type={type}
+          type={typeState}
           placeholder={placeholder}
           disabled={disabled}
           className="w-full bg-transparent text-stone-900 placeholder:text-stone-400 focus:outline-none"

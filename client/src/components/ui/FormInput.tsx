@@ -3,6 +3,7 @@ import type { InputType } from '@/types';
 import ShowButton from './ShowButton';
 
 type Props = {
+  disabled?: boolean;
   title?: string;
   name: string;
   type: InputType;
@@ -11,7 +12,15 @@ type Props = {
   imgAlt?: string;
 };
 
-export default function FormInput({ title, name, type, placeholder, imgSrc, imgAlt }: Props) {
+export default function FormInput({
+  title,
+  name,
+  type,
+  placeholder,
+  imgSrc,
+  imgAlt,
+  disabled,
+}: Props) {
   const hidePassword = (isHidden: boolean) => {
     console.log(isHidden);
   };
@@ -23,19 +32,16 @@ export default function FormInput({ title, name, type, placeholder, imgSrc, imgA
           {title}
         </label>
       )}
-      <div className="flex h-9 items-center rounded-lg border border-stone-300 bg-white px-3 transition-colors focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
+      <div className="flex h-9 items-center rounded-lg border border-stone-300 bg-white px-3 transition-colors focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20">
         {imgSrc && <img src={imgSrc} alt={imgAlt} className="mr-3 h-5 w-5 shrink-0" />}
         <input
           id={name}
           type={type}
           placeholder={placeholder}
+          disabled={disabled}
           className="w-full bg-transparent text-stone-900 placeholder:text-stone-400 focus:outline-none"
         />
-        {type === 'password' && (
-          <div className="ml-2 shrink-0">
-            <ShowButton onClick={hidePassword} />
-          </div>
-        )}
+        {type === 'password' && <ShowButton className="ml-2 shrink-0" onClick={hidePassword} />}
       </div>
     </div>
   );

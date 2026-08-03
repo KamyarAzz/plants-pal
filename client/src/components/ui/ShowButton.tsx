@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-type Props = { onClick: (isHidden: boolean) => void };
+type Props = { onClick: (isHidden: boolean) => void; className?: string };
 
-export default function ShowButton({ onClick }: Props) {
+export default function ShowButton({ onClick, className }: Props) {
   const [isHidden, setIsHidden] = useState(true);
 
   const clickHandler = () => {
@@ -13,7 +13,7 @@ export default function ShowButton({ onClick }: Props) {
   return (
     <div
       onClick={clickHandler}
-      className="w-8 h-8 p-1 rounded-full hover:bg-amber-50 cursor-pointer"
+      className={`w-8 h-8 p-1 rounded-full hover:bg-green-50 cursor-pointer ${className || ''}`}
     >
       {isHidden ? (
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">

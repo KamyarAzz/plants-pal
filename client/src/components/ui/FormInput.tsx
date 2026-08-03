@@ -17,19 +17,25 @@ export default function FormInput({ title, name, type, placeholder, imgSrc, imgA
   };
 
   return (
-    <div className="flex flex-col gap-1">
-      {title && <label htmlFor={name}>{title}</label>}
-      <div className="flex items-center gap-2 rounded border border-stone-400 bg-stone-100">
-        {imgSrc && <img src={imgSrc} alt={imgAlt} />}
-        <div className="flex w-full items-center justify-between gap-2 px-2">
-          <input
-            className="bg-stone-100 text-stone-800 placeholder:text-stone-500 focus:outline-none"
-            id={name}
-            type={type}
-            placeholder={placeholder}
-          />
-          {type === 'password' && <ShowButton onClick={hidePassword} />}
-        </div>
+    <div className="flex flex-col gap-2">
+      {title && (
+        <label htmlFor={name} className="text-sm font-medium text-stone-700">
+          {title}
+        </label>
+      )}
+      <div className="flex h-9 items-center rounded-lg border border-stone-300 bg-white px-3 transition-colors focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
+        {imgSrc && <img src={imgSrc} alt={imgAlt} className="mr-3 h-5 w-5 shrink-0" />}
+        <input
+          id={name}
+          type={type}
+          placeholder={placeholder}
+          className="w-full bg-transparent text-stone-900 placeholder:text-stone-400 focus:outline-none"
+        />
+        {type === 'password' && (
+          <div className="ml-2 shrink-0">
+            <ShowButton onClick={hidePassword} />
+          </div>
+        )}
       </div>
     </div>
   );

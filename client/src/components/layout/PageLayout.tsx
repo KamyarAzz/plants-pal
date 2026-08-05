@@ -6,8 +6,8 @@ type Props = {
 
 export default function PageLayout({ children }: Props) {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-100">
+    <div className="flex h-full w-full items-center justify-center bg-slate-100">
       {children ?? <Outlet />}
-    </main>
+    </div>
   );
 }

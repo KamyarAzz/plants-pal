@@ -1,22 +1,22 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 
 import emailImg from '@/assets/icons/email.svg';
 import passwordImg from '@/assets/icons/lock.svg';
 import Button from '@/components/ui/Button';
 import FormInput from '@/components/ui/FormInput';
 
+import { useLogin } from '../hooks/useLogin';
 import SocialsLogin from './SocialsLogin';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate();
+  const { login } = useLogin();
 
   const handleSubmit = () => {
-    console.log(email, password);
-    navigate('/dashboard');
+    login(email);
   };
 
   return (

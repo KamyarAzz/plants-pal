@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 
+import GuestLayout from '@/components/layout/GuestLayout';
 import PageLayout from '@/components/layout/PageLayout';
 import LoginPage from '@/features/auth/pages/LoginPage';
 import RegisterPage from '@/features/auth/pages/RegisterPage';
@@ -17,7 +18,11 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <></>,
+            element: <Navigate to="/dashboard" replace />,
+          },
+          {
+            path: '/dashboard',
+            element: <div>Dashboard</div>,
           },
         ],
       },
@@ -28,7 +33,7 @@ export const router = createBrowserRouter([
     element: <GuestRoute />,
     children: [
       {
-        element: <PageLayout />,
+        element: <GuestLayout />,
         children: [
           {
             index: true,

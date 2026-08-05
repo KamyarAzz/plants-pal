@@ -1,4 +1,5 @@
-import { Link } from 'react-router';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 
 import emailImg from '@/assets/icons/email.svg';
 import passwordImg from '@/assets/icons/lock.svg';
@@ -8,9 +9,17 @@ import FormInput from '@/components/ui/FormInput';
 import SocialsLogin from './SocialsLogin';
 
 export default function RegisterForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const navigate = useNavigate();
+
   const handleSubmit = () => {
-    // Handle form submission logic here
+    console.log(email, password, confirmPassword);
+    navigate('/dashboard');
   };
+
   return (
     <form className="flex flex-col shadow-lg gap-2 bg-white rounded-lg p-5">
       <FormInput
@@ -19,6 +28,8 @@ export default function RegisterForm() {
         name="email"
         type="email"
         placeholder="name@email.com"
+        value={email}
+        setValue={setEmail}
       />
       <FormInput
         imgSrc={passwordImg}
@@ -26,6 +37,8 @@ export default function RegisterForm() {
         name="password"
         type="password"
         placeholder="Enter your password"
+        value={password}
+        setValue={setPassword}
       />
       <FormInput
         imgSrc={passwordImg}
@@ -33,6 +46,8 @@ export default function RegisterForm() {
         name="confirmPassword"
         type="password"
         placeholder="Confirm your password"
+        value={confirmPassword}
+        setValue={setConfirmPassword}
       />
       <Button className="mt-2" onClick={handleSubmit}>
         Register

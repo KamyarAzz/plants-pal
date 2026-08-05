@@ -12,6 +12,8 @@ type Props = {
   placeholder?: string;
   imgSrc?: string;
   imgAlt?: string;
+  value: string;
+  setValue: (value: string) => void;
 };
 
 export default function FormInput({
@@ -22,6 +24,8 @@ export default function FormInput({
   imgSrc,
   imgAlt,
   disabled,
+  value,
+  setValue,
 }: Props) {
   const [typeState, setTypeState] = useState(type);
   const hidePassword = (isHidden: boolean) => {
@@ -38,6 +42,8 @@ export default function FormInput({
       <div className="flex h-9 items-center rounded-lg border border-stone-300 bg-white px-3 transition-colors focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20">
         {imgSrc && <img src={imgSrc} alt={imgAlt} className="mr-3 h-5 w-5 shrink-0" />}
         <input
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
           id={name}
           type={typeState}
           placeholder={placeholder}

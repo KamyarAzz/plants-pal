@@ -1,4 +1,5 @@
-import { Link } from 'react-router';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 
 import emailImg from '@/assets/icons/email.svg';
 import passwordImg from '@/assets/icons/lock.svg';
@@ -8,8 +9,14 @@ import FormInput from '@/components/ui/FormInput';
 import SocialsLogin from './SocialsLogin';
 
 export default function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
   const handleSubmit = () => {
-    // Handle form submission logic here
+    console.log(email, password);
+    navigate('/dashboard');
   };
 
   return (
@@ -20,6 +27,8 @@ export default function LoginForm() {
         name="email"
         type="email"
         placeholder="name@email.com"
+        value={email}
+        setValue={setEmail}
       />
       <FormInput
         imgSrc={passwordImg}
@@ -27,6 +36,8 @@ export default function LoginForm() {
         name="password"
         type="password"
         placeholder="Enter your password"
+        value={password}
+        setValue={setPassword}
       />
       <Button className="mt-2" onClick={handleSubmit}>
         Login

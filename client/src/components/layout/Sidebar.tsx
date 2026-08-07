@@ -6,9 +6,9 @@ import { useLogout } from '@/features/auth/hooks/useLogout';
 
 export default function Sidebar() {
   const sidebarItems = [
-    { title: 'Home', path: '/dashboard', icon: img },
+    { title: 'Home', path: '/home', icon: img },
     { title: 'Plants', path: '/plants', icon: img },
-    { title: 'Subscriptions', path: '/subscriptions', icon: img },
+    { title: 'Subscription', path: '/subscription', icon: img },
     { title: 'History', path: '/history', icon: img },
     { title: 'Settings', path: '/settings', icon: img },
   ];

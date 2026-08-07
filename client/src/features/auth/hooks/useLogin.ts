@@ -10,7 +10,7 @@ export function useLogin() {
   function login(email: string) {
     setUser({ email, username: 'John Doe' });
 
-    navigate('/dashboard', { replace: true });
+    navigate('/home', { replace: true });
   }
 
   return { login };

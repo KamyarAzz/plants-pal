@@ -7,7 +7,7 @@ type Props = { plant: Plant };
 
 export default function PlantCard({ plant }: Props) {
   return (
-    <div className="flex flex-col gap-3 p-4 border bg-white border-gray-300 rounded-lg shadow-md w-64">
+    <div className="flex flex-col gap-3 p-3 border bg-white border-gray-300 rounded-lg shadow-md w-64">
       <div className="flex gap-2">
         <img
           src="https://picsum.photos/200"

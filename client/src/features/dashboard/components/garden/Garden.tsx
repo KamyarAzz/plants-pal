@@ -1,6 +1,7 @@
 import type { Plant } from '@/types';
 
 import PlantCard from './PlantCard';
+import WateringHistory from './WateringHistory';
 
 export default function Garden() {
   const plants: Plant[] = [
@@ -28,12 +29,15 @@ export default function Garden() {
     },
   ];
   return (
-    <div className="flex flex-col gap-4 w-full h-full p-4">
+    <div className="flex flex-col gap-4 w-full h-full">
       <h2 className="text-xl font-bold">Garden</h2>
-      <div className="flex flex-wrap gap-4 overflow-auto">
-        {plants.map((plant) => (
-          <PlantCard plant={plant} />
-        ))}
+      <div className="flex gap-2 justify-between overflow-auto">
+        <div className="flex flex-wrap gap-4 overflow-auto">
+          {plants.map((plant) => (
+            <PlantCard plant={plant} />
+          ))}
+        </div>
+        <WateringHistory />
       </div>
     </div>
   );

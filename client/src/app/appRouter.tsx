@@ -22,8 +22,24 @@ export const router = createBrowserRouter([
             element: <AppLayout />,
             children: [
               {
-                path: 'dashboard',
+                path: 'home',
                 element: <DashboardPage />,
+              },
+              {
+                path: 'plants',
+                element: <div>Plants Page</div>,
+              },
+              {
+                path: 'history',
+                element: <div>History Page</div>,
+              },
+              {
+                path: 'subscription',
+                element: <div>Subscription Page</div>,
+              },
+              {
+                path: 'settings',
+                element: <div>Settings Page</div>,
               },
             ],
           },

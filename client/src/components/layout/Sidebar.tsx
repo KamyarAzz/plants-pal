@@ -16,7 +16,7 @@ export default function Sidebar() {
   const { logout } = useLogout();
 
   return (
-    <div className="flex flex-col w-56 h-full gap-0.5 border-gray-300 p-4 border-r">
+    <div className="flex flex-col w-56 h-full gap-0.5 border-gray-300 bg-white p-4 border-r">
       <div className="flex flex-col gap-0.5 w-full h-full">
         <div className="flex items-center gap-2 p-2 mb-4">
           <img src={logoImg} alt="Logo" className="w-8 h-8" />

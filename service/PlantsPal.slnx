@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PlantsPal.API/PlantsPal.API.csproj" />
+  <Project Path="PlantsPal.Application/PlantsPal.Application.csproj" />
+  <Project Path="PlantsPal.Domain/PlantsPal.Domain.csproj" />
+  <Project Path="PlantsPal.Infrastructure/PlantsPal.Infrastructure.csproj" />
+</Solution>

@@ -1,55 +1,77 @@
-# -----------------------------
-# Dependencies
-# -----------------------------
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]est[Rr]esults/
+
+project.lock.json
+project.fragment.lock.json
+artifacts/
+publish/
+*.azuresecrets.json
+aspnetcore-browser-refresh.js
+
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/repositories.config
+ffw.pubxml
+
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userquery
+
+.idea/
+*.sln.iml
+_ReSharper.Caches/
+
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
 node_modules/
+jspm_packages/
+bower_components/
 
-# -----------------------------
-# Logs
-# -----------------------------
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# -----------------------------
-# Environment
-# -----------------------------
 .env
 .env.*
 !.env.example
+*.dev.secrets.json
+appsettings.Development.json
 
-# -----------------------------
-# IDEs
-# -----------------------------
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Visual Studio
-.vs/
-
-# -----------------------------
-# OS
-# -----------------------------
-.DS_Store
-Thumbs.db
-
-# -----------------------------
-# Coverage
-# -----------------------------
-coverage/
-
-# -----------------------------
-# Build outputs
-# -----------------------------
 dist/
 build/
+.cache/
+.parcel-cache
+.eslintcache
+.stylelintcache
+.next/
+out/
+.docusaurus/
 
-# -----------------------------
-# Temporary files
-# -----------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
 tmp/
 temp/
-.cache/
+.husky/_/

@@ -13,7 +13,7 @@ export default function Button({ disabled, onClick, children, className }: Props
   return (
     <button
       className={cn(
-        'bg-green-500 cursor-pointer disabled:cursor-auto text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500/20',
+        'bg-green-700/90 cursor-pointer disabled:cursor-auto text-white px-4 py-2 rounded-md hover:bg-green-800/90 focus:outline-none focus:ring-2 focus:ring-green-500/20',
         className,
       )}
       disabled={disabled}

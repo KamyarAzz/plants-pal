@@ -7,7 +7,7 @@ export default function GuestRoute() {
   const user = useAuthStore((state) => state.user);
 
   if (user) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/home" replace />;
   }
 
   return <Outlet />;

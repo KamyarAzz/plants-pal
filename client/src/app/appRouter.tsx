@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from 'react-router';
 import AppLayout from '@/components/layout/AppLayout';
 import GuestLayout from '@/components/layout/GuestLayout';
 import LoginPage from '@/features/auth/pages/LoginPage';
+import NotFoundPage from '@/features/auth/pages/NotFoundPage';
 import RegisterPage from '@/features/auth/pages/RegisterPage';
 import DashboardPage from '@/features/dashboard/pages/DashboardPage';
 
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
           {
             path: 'settings',
             element: <div>Settings Page</div>,
+          },
+          {
+            path: '*',
+            element: <NotFoundPage />,
           },
         ],
       },

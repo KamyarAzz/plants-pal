@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import { useAuthStore } from '@/stores/authStore';
 
 import HeaderInfoBox from './HeaderInfoBox';
@@ -40,9 +42,12 @@ export default function Header() {
         <h1 className="text-2xl font-bold">
           Welcome back {user?.username}, <br /> To your digital garden!
         </h1>
-        <button className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800 cursor-pointer">
+        <Link
+          to="/plants/add"
+          className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800 cursor-pointer"
+        >
           + Add Plant
-        </button>
+        </Link>
       </div>
       <div className="flex gap-2 w-full">
         {headerInfoData.map((info) => (

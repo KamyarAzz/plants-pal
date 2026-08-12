@@ -34,6 +34,14 @@ export default function WateringHistory() {
       name: 'Spider Plant',
       time: '1 week ago',
     },
+    {
+      name: 'Spider Plant',
+      time: '1 week ago',
+    },
+    {
+      name: 'Spider Plant',
+      time: '1 week ago',
+    },
   ];
   return (
     <div className="flex flex-col border gap-2 min-w-64 border-gray-300 bg-white rounded-md p-3">

@@ -1,6 +1,6 @@
 import type { Plant } from '@/types';
 
-import PlantCard from './plant/PlantCard';
+import PlantCard from '../../../plants/components/plant/PlantCard';
 import WateringHistory from './watering/WateringHistory';
 
 export default function Garden() {
@@ -94,13 +94,14 @@ export default function Garden() {
       notes: 'Starting to blossom, might need a larger cage soon.',
     },
   ];
+
   return (
     <div className="flex flex-col gap-2 w-full h-full overflow-auto">
       <h2 className="text-xl font-bold">Garden</h2>
       <div className="flex gap-2 justify-between overflow-auto">
         <div className="flex flex-wrap gap-4 overflow-auto">
           {plants.map((plant) => (
-            <PlantCard key={plant.id} plant={plant} />
+            <PlantCard view="grid" key={plant.id} plant={plant} />
           ))}
         </div>
         <WateringHistory />

@@ -3,9 +3,9 @@ import Header from '../components/header/Header';
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-4 w-full h-full p-4 overflow-auto">
+    <>
       <Header />
       <Garden />
-    </div>
+    </>
   );
 }

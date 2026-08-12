@@ -2,7 +2,6 @@ import { createBrowserRouter, Navigate } from 'react-router';
 
 import AppLayout from '@/components/layout/AppLayout';
 import GuestLayout from '@/components/layout/GuestLayout';
-import PageLayout from '@/components/layout/PageLayout';
 import LoginPage from '@/features/auth/pages/LoginPage';
 import RegisterPage from '@/features/auth/pages/RegisterPage';
 import DashboardPage from '@/features/dashboard/pages/DashboardPage';
@@ -16,32 +15,27 @@ export const router = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        element: <PageLayout />,
+        element: <AppLayout />,
         children: [
           {
-            element: <AppLayout />,
-            children: [
-              {
-                path: 'home',
-                element: <DashboardPage />,
-              },
-              {
-                path: 'plants',
-                element: <div>Plants Page</div>,
-              },
-              {
-                path: 'history',
-                element: <div>History Page</div>,
-              },
-              {
-                path: 'subscription',
-                element: <div>Subscription Page</div>,
-              },
-              {
-                path: 'settings',
-                element: <div>Settings Page</div>,
-              },
-            ],
+            path: 'home',
+            element: <DashboardPage />,
+          },
+          {
+            path: 'plants',
+            element: <div>Plants Page</div>,
+          },
+          {
+            path: 'history',
+            element: <div>History Page</div>,
+          },
+          {
+            path: 'subscription',
+            element: <div>Subscription Page</div>,
+          },
+          {
+            path: 'settings',
+            element: <div>Settings Page</div>,
           },
         ],
       },

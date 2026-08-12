@@ -1,16 +1,21 @@
 import { Link } from 'react-router';
 
-import img from '@/assets/logos/google.svg';
+import historyImg from '@/assets/icons/sidebar/droplet.svg';
+import homeImg from '@/assets/icons/sidebar/house.svg';
+import plantsImg from '@/assets/icons/sidebar/leaf.svg';
+import logoutImg from '@/assets/icons/sidebar/logout.svg';
+import settingsImg from '@/assets/icons/sidebar/settings.svg';
+import subscriptionImg from '@/assets/icons/sidebar/subscription.svg';
 import logoImg from '@/assets/logos/plants-pal.jpg';
 import { useLogout } from '@/features/auth/hooks/useLogout';
 
 export default function Sidebar() {
   const sidebarItems = [
-    { title: 'Home', path: '/home', icon: img },
-    { title: 'Plants', path: '/plants', icon: img },
-    { title: 'Subscription', path: '/subscription', icon: img },
-    { title: 'History', path: '/history', icon: img },
-    { title: 'Settings', path: '/settings', icon: img },
+    { title: 'Home', path: '/home', icon: homeImg },
+    { title: 'Plants', path: '/plants', icon: plantsImg },
+    { title: 'Subscription', path: '/subscription', icon: subscriptionImg },
+    { title: 'History', path: '/history', icon: historyImg },
+    { title: 'Settings', path: '/settings', icon: settingsImg },
   ];
 
   const { logout } = useLogout();
@@ -40,7 +45,7 @@ export default function Sidebar() {
         onClick={logout}
         className="hover:bg-green-600/15 cursor-pointer flex items-center p-2 gap-2 rounded-md"
       >
-        <img src={img} alt="Logout" className="w-6 h-6" />
+        <img src={logoutImg} alt="Logout" className="w-6 h-6" />
         <p>Logout</p>
       </div>
     </div>

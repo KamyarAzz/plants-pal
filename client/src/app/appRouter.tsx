@@ -6,6 +6,7 @@ import LoginPage from '@/features/auth/pages/LoginPage';
 import NotFoundPage from '@/features/auth/pages/NotFoundPage';
 import RegisterPage from '@/features/auth/pages/RegisterPage';
 import DashboardPage from '@/features/dashboard/pages/DashboardPage';
+import PlantsPage from '@/features/plants/pages/PlantsPage';
 
 import GuestRoute from './GuestRoute';
 import ProtectedRoute from './ProtectedRoute';
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'plants',
-            element: <div>Plants Page</div>,
+            element: <PlantsPage />,
           },
           {
             path: 'history',

@@ -16,7 +16,7 @@ type Props = {
   setValue: (value: string) => void;
 };
 
-export default function FormInput({
+export default function Input({
   title,
   name,
   type,

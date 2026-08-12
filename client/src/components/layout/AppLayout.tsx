@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 
 import PageLayout from './PageLayout';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar/Sidebar';
 
 type Props = {
   children?: React.ReactNode;

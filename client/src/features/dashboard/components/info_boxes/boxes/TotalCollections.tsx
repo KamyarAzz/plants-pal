@@ -34,6 +34,7 @@ export default function TotalCollections({ categories, total }: Props) {
       value={total}
       link="/plants"
       linkText="View all plants"
+      color="green"
     >
       <div className="flex items-center gap-3">
         {/* Chart */}

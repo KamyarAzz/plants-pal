@@ -1,5 +1,6 @@
 import NeedsCare from './boxes/NeedsCare';
 import TotalCollections from './boxes/TotalCollections';
+import UpcomingTasks from './boxes/UpcomingTasks';
 
 export default function InfoBoxesContainer() {
   const categories = [
@@ -24,7 +25,7 @@ export default function InfoBoxesContainer() {
     <div className="flex w-full gap-4">
       <TotalCollections total={24} categories={categories} />
       <NeedsCare total={5} />
-      <TotalCollections total={24} categories={categories} />
+      <UpcomingTasks value="Water Changiz" />
       <TotalCollections total={24} categories={categories} />
     </div>
   );

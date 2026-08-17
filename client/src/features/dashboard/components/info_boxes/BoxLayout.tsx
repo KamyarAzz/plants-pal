@@ -38,7 +38,7 @@ export default function BoxLayout({
           <div className="flex flex-col items-start gap-0">
             <p className="text-sm font-medium text-slate-800">{title}</p>
             <div className="flex flex-col items-baseline">
-              <span className="text-3xl font-bold tracking-tight text-slate-900">{value}</span>
+              <span className="text-2xl font-bold tracking-tight text-slate-900">{value}</span>
               <span className="text-sm text-slate-600">{description}</span>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function BoxLayout({
         <Link
           to={link}
           className={`cursor-pointer ml-2 flex items-center text-sm font-medium  transition-colors  
-            ${color === 'purple' ? 'hover:text-purple-700 text-purple-600' : color === 'orange' ? 'hover:text-orange-500 text-orange-400' : color === 'blue' ? 'hover:text-blue-700 text-blue-600' : 'hover:text-emerald-700 text-emerald-600'}`}
+            ${color === 'purple' ? 'hover:text-purple-700 text-purple-600' : color === 'orange' ? 'hover:text-orange-500 text-orange-400' : color === 'blue' ? 'hover:text-sky-700 text-sky-600' : 'hover:text-emerald-700 text-emerald-600'}`}
         >
           {linkText} →
         </Link>

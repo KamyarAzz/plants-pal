@@ -20,11 +20,11 @@ export default function InfoBoxesContainer() {
   ];
 
   return (
-    <div className="flex flex-wrap w-full">
+    <div className="flex w-full gap-4">
       <TotalCollections total={24} categories={categories} />
-      {/* <TotalCollections count={10} />
-      <TotalCollections count={10} />
-      <TotalCollections count={10} /> */}
+      <TotalCollections total={24} categories={categories} />
+      <TotalCollections total={24} categories={categories} />
+      <TotalCollections total={24} categories={categories} />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import { Link } from 'react-router';
 
 import type { PlantCategory } from '@/types';
 
+import BoxWrapper from './BoxWrapper';
+
 interface Props {
   total: number;
   categories: PlantCategory[];
@@ -27,7 +29,7 @@ export default function TotalCollections({ total, categories }: Props) {
   const circumference = 2 * Math.PI * 38;
 
   return (
-    <div className="relative w-1/4 overflow-hidden flex flex-col gap-2 rounded-2xl border border-emerald-100 bg-linear-to-br from-emerald-50 to-white p-2.5 shadow-sm">
+    <BoxWrapper color="green">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
@@ -76,7 +78,7 @@ export default function TotalCollections({ total, categories }: Props) {
           {/* Icon */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
-              A{' '}
+              🪴{' '}
             </div>
           </div>
         </div>
@@ -117,10 +119,10 @@ export default function TotalCollections({ total, categories }: Props) {
       {/* Footer */}
       <Link
         to="/plants"
-        className="cursor-pointer flex items-center text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
+        className="cursor-pointer ml-2 flex items-center text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
       >
         View all plants →{' '}
       </Link>
-    </div>
+    </BoxWrapper>
   );
 }

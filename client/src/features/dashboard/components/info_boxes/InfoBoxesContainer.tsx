@@ -1,4 +1,5 @@
-import TotalCollections from './TotalCollections';
+import NeedsCare from './boxes/NeedsCare';
+import TotalCollections from './boxes/TotalCollections';
 
 export default function InfoBoxesContainer() {
   const categories = [
@@ -22,7 +23,7 @@ export default function InfoBoxesContainer() {
   return (
     <div className="flex w-full gap-4">
       <TotalCollections total={24} categories={categories} />
-      <TotalCollections total={24} categories={categories} />
+      <NeedsCare total={5} />
       <TotalCollections total={24} categories={categories} />
       <TotalCollections total={24} categories={categories} />
     </div>

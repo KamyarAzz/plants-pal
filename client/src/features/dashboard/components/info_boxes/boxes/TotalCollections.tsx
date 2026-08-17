@@ -1,15 +1,13 @@
-import { Link } from 'react-router';
-
 import type { PlantCategory } from '@/types';
 
-import BoxWrapper from './BoxWrapper';
+import BoxLayout from '../BoxLayout';
 
 interface Props {
   total: number;
   categories: PlantCategory[];
 }
 
-export default function TotalCollections({ total, categories }: Props) {
+export default function TotalCollections({ categories, total }: Props) {
   const totalCategories = categories.reduce((sum, category) => sum + category.count, 0);
 
   const segments = categories.map((category, index) => {
@@ -29,23 +27,14 @@ export default function TotalCollections({ total, categories }: Props) {
   const circumference = 2 * Math.PI * 38;
 
   return (
-    <BoxWrapper color="green">
-      {/* Header */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-            🪴{' '}
-          </div>
-
-          <div className="flex flex-col items-start gap-0">
-            <p className="text-sm font-medium text-slate-800">Total Collection</p>
-            <div className="flex flex-col items-baseline">
-              <span className="text-3xl font-bold tracking-tight text-slate-900">{total}</span>
-              <span className="text-sm text-slate-600">Plants</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <BoxLayout
+      description="Plants"
+      icon="🪴"
+      title="Total Collection"
+      value={total}
+      link="/plants"
+      linkText="View all plants"
+    >
       <div className="flex items-center gap-3">
         {/* Chart */}
         <div className="relative h-28 w-28 shrink-0">
@@ -115,14 +104,6 @@ export default function TotalCollections({ total, categories }: Props) {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Link
-        to="/plants"
-        className="cursor-pointer ml-2 flex items-center text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
-      >
-        View all plants →{' '}
-      </Link>
-    </BoxWrapper>
+    </BoxLayout>
   );
 }

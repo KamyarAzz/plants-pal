@@ -10,4 +10,10 @@ type Plant = {
   notes: string;
 };
 
-export type { Plant };
+type PlantCategory = {
+  name: string;
+  count: number;
+  color: string;
+};
+
+export type { Plant, PlantCategory };

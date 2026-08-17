@@ -1,10 +1,6 @@
 import { Link } from 'react-router';
 
-interface PlantCategory {
-  name: string;
-  count: number;
-  color: string;
-}
+import type { PlantCategory } from '@/types';
 
 interface Props {
   total: number;

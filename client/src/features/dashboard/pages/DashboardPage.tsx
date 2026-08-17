@@ -1,10 +1,12 @@
 import Garden from '../components/garden/Garden';
-import Header from '../components/header/Header';
+import InfoBoxesContainer from '../components/info_boxes/InfoBoxesContainer';
+import DashboardTitle from '../components/title/DashboardTitle';
 
 export default function DashboardPage() {
   return (
     <>
-      <Header />
+      <DashboardTitle />
+      <InfoBoxesContainer />
       <Garden />
     </>
   );

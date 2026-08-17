@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'history',
-            element: <div>History Page</div>,
+            element: <div className="flex flex-col gap-4 w-full h-full"></div>,
           },
           {
             path: 'subscription',

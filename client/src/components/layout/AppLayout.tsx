@@ -12,7 +12,7 @@ export default function AppLayout({ children }: Props) {
     <PageLayout>
       <div className="flex w-full h-full">
         <Sidebar />
-        <main className="flex flex-col gap-4 overflow-auto p-4 w-full h-full">
+        <main className="flex flex-col gap-2 overflow-auto p-4 w-full h-full">
           {children ?? <Outlet />}
         </main>
       </div>

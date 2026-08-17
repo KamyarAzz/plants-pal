@@ -49,7 +49,8 @@ export default function BoxLayout({
       {link && (
         <Link
           to={link}
-          className="cursor-pointer ml-2 flex items-center text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
+          className={`cursor-pointer ml-2 flex items-center text-sm font-medium  transition-colors  
+            ${color === 'purple' ? 'hover:text-purple-700 text-purple-600' : color === 'orange' ? 'hover:text-orange-500 text-orange-400' : color === 'blue' ? 'hover:text-blue-700 text-blue-600' : 'hover:text-emerald-700 text-emerald-600'}`}
         >
           {linkText} →
         </Link>

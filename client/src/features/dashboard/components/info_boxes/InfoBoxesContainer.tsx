@@ -1,3 +1,4 @@
+import ActiveSubscription from './boxes/ActiveSubscription';
 import NeedsCare from './boxes/NeedsCare';
 import TotalCollections from './boxes/TotalCollections';
 import UpcomingTasks from './boxes/UpcomingTasks';
@@ -26,7 +27,7 @@ export default function InfoBoxesContainer() {
       <TotalCollections total={24} categories={categories} />
       <NeedsCare total={5} />
       <UpcomingTasks value="Water Changiz" />
-      <TotalCollections total={24} categories={categories} />
+      <ActiveSubscription value={10} />
     </div>
   );
 }

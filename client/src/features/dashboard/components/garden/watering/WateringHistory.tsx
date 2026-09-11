@@ -44,7 +44,7 @@ export default function WateringHistory() {
     },
   ];
   return (
-    <div className="flex flex-col border gap-2 min-w-64 border-gray-300 bg-white rounded-md p-3">
+    <div className="flex h-full flex-col border gap-2 min-w-64 border-gray-300 bg-white rounded-md p-3">
       <h4 className="text-lg font-bold">Care History</h4>
       <div className="flex flex-col gap-2 overflow-auto p-1">
         {history.map((item, index) => (

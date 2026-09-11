@@ -9,15 +9,17 @@ type Props = {
 export default function GuestLayout({ children }: Props) {
   return (
     <PageLayout>
-      <main className="flex flex-col md:flex-row gap-10 w-full">
-        <div className="flex flex-col justify-center items-center gap-2 w-1/2">
-          <h1 className="text-5xl font-bold text-center">
-            <span className="text-green-500">Plants</span>{' '}
-            <span className="text-lime-500">Pal</span>
-          </h1>
-          <p className="text-xl">Welcome to your digital garden</p>
+      <main className="flex flex-col justify-center items-center md:flex-row gap-10 md:gap-20 lg:gap-30 w-full">
+        <div className="flex flex-col justify-center items-end md:w-1/2">
+          <div className="flex flex-col justify-center items-center gap-2">
+            <h1 className="text-5xl font-bold text-center">
+              <span className="text-green-500">Plants</span>{' '}
+              <span className="text-lime-500">Pal</span>
+            </h1>
+            <p className="text-xl">Welcome to your digital garden</p>
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center gap-2 w-1/2">
+        <div className="flex flex-col justify-center items-start gap-2 md:w-1/2">
           {children ?? <Outlet />}
         </div>
       </main>

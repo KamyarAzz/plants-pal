@@ -23,7 +23,7 @@ export default function InfoBoxesContainer() {
   ];
 
   return (
-    <div className="flex w-full gap-4">
+    <div className="lg:flex lg:flex-row w-full gap-4 md:grid md:grid-cols-2 flex-col">
       <TotalCollections total={24} categories={categories} />
       <NeedsCare total={5} />
       <UpcomingTasks value="Water Changiz" />

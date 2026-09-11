@@ -38,7 +38,7 @@ export default function DashboardTitle() {
   // ];
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex md:flex-row flex-col md:items-center md:justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-bold">Welcome back, {user?.username} 🌱</h1>
           <p className="text-slate-600">Here's what's happening in your digital garden today!</p>

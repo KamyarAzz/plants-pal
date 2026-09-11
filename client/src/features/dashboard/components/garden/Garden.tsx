@@ -97,9 +97,9 @@ export default function Garden() {
 
   return (
     <div className="flex flex-col gap-2 w-full h-full">
-      <h2 className="text-xl font-bold">Garden</h2>
+      <h2 className="text-xl font-bold md:flex hidden">Garden</h2>
       <div className="flex gap-4 justify-between">
-        <div className="flex flex-wrap items-baseline justify-baseline gap-4 h-min overflow-auto">
+        <div className="md:flex hidden flex-wrap items-baseline justify-baseline gap-4 h-min overflow-auto">
           {plants.map((plant) => (
             <PlantCard view="grid" key={plant.id} plant={plant} />
           ))}

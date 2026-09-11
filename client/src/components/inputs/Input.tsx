@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { cn } from '@/lib/cn';
 import type { InputType } from '@/types';
 
 import ShowButton from './ShowButton';
@@ -14,9 +15,10 @@ type Props = {
   imgAlt?: string;
   value: string;
   setValue: (value: string) => void;
+  className?: string;
 };
 
-export default function FormInput({
+export default function Input({
   title,
   name,
   type,
@@ -26,6 +28,7 @@ export default function FormInput({
   disabled,
   value,
   setValue,
+  className,
 }: Props) {
   const [typeState, setTypeState] = useState(type);
   const hidePassword = (isHidden: boolean) => {
@@ -33,7 +36,7 @@ export default function FormInput({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className={cn('flex flex-col gap-2', className)}>
       {title && (
         <label htmlFor={name} className="text-sm font-medium text-stone-700">
           {title}

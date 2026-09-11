@@ -4,7 +4,7 @@ import type { Plant } from '@/types';
 
 import RequirementsCharts from './RequirementsCharts';
 
-type Props = { plant: Plant };
+type Props = { plant: Plant; view: 'list' | 'grid' };
 
 export default function PlantCard({ plant }: Props) {
   return (

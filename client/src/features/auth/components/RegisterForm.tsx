@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 import emailImg from '@/assets/icons/email.svg';
 import passwordImg from '@/assets/icons/lock.svg';
-import Button from '@/components/ui/Button';
-import FormInput from '@/components/ui/FormInput';
+import Button from '@/components/inputs/Button';
+import Input from '@/components/inputs/Input';
 
 import { useLogin } from '../hooks/useLogin';
 import SocialsLogin from './SocialsLogin';
@@ -22,7 +22,7 @@ export default function RegisterForm() {
 
   return (
     <form className="flex flex-col shadow-lg gap-2 bg-white rounded-lg p-5">
-      <FormInput
+      <Input
         imgSrc={emailImg}
         title="Email"
         name="email"
@@ -31,7 +31,7 @@ export default function RegisterForm() {
         value={email}
         setValue={setEmail}
       />
-      <FormInput
+      <Input
         imgSrc={passwordImg}
         title="Password"
         name="password"
@@ -40,7 +40,7 @@ export default function RegisterForm() {
         value={password}
         setValue={setPassword}
       />
-      <FormInput
+      <Input
         imgSrc={passwordImg}
         title="Confirm Password"
         name="confirmPassword"

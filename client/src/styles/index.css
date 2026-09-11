@@ -40,3 +40,21 @@ body,
   width: 100%;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 999px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #22c55e transparent;
+}
